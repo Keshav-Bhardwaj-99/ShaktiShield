@@ -61,6 +61,11 @@
 - **Express.js** - Web application framework
 - **Socket.io** - Real-time communication
 - **SQLite3** - Lightweight database
+- **Concurrently** - Run multiple processes (Frontend + Backend)
+
+### Tooling & Deployment
+- **Vite** - Modern frontend build tool and dev server
+- **Vercel** - Deployment and serverless hosting
 
 ### APIs & Services
 - **Web Speech API** - Voice recognition and synthesis
@@ -81,20 +86,35 @@
    cd ShaktiShield
    ```
 
-2. **Install dependencies**
+2. **Install all dependencies**
    ```bash
-   npm install
+   # This installs dependencies for root, frontend, and backend
+   npm run install-all
    ```
 
-3. **Start the server**
+3. **Start the application**
    ```bash
+   # From the root directory to start both Frontend & Backend
    npm start
    ```
 
-4. **Access the application**
-   ```
-   http://localhost:3003
-   ```
+### 💻 Running Separately
+
+If you prefer to run the components individually:
+
+**Frontend (Recommended for UI Dev):**
+```bash
+cd frontend
+npm start
+# Runs at http://localhost:3000 (proxies to backend automatically)
+```
+
+**Backend:**
+```bash
+cd backend
+npm start
+# Runs at http://localhost:3003
+```
 
 ### Alternative Start Methods
 ```bash
@@ -137,8 +157,25 @@ JWT_SECRET=your-secret-key-here
 NODE_ENV=production
 ```
 
-### Database Setup
-The application automatically creates and manages the SQLite database in the `database/` directory.
+## ☁️ Deployment
+
+### 🚀 Hosting on Vercel
+
+ShaktiShield is optimized for one-click deployment on Vercel:
+
+1. **Connect your GitHub repo** to Vercel.
+2. Vercel will detect the `vercel.json` configuration automatically.
+3. **Configure Environment Variables** in the Vercel Dashboard:
+   - `JWT_SECRET`: A secure string for authentication.
+   - `DB_PATH`: Set to `/tmp/shaktishield.db` for serverless environments (Note: data resets on restart).
+4. **Deploy!** Your site will be live at `your-project.vercel.app`.
+
+### 🛡️ Persistent Hosting (Render/Railway)
+
+For persistent SQLite data and stable Socket.io connections, we recommend **Render** or **Railway**:
+- Root Directory: `.`
+- Build Command: `npm run install-all`
+- Start Command: `cd backend && npm start`
 
 ## 🌍 Internationalization
 
