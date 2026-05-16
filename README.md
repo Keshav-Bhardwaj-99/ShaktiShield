@@ -41,6 +41,9 @@
 
 ## 🚀 Live Demo
 
+- **User Platform**: [https://shakti-shield-uqgc.vercel.app/](https://shakti-shield-uqgc.vercel.app/)
+- **Admin Dashboard**: [https://shakti-shield-uqgc.vercel.app/admin](https://shakti-shield-uqgc.vercel.app/admin)
+
 ### Community Impact Statistics
 - **247 Active Supporters**
 - **1,832 Support Sessions**
