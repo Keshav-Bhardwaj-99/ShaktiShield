@@ -20,6 +20,10 @@
       "dest": "backend/server.js"
     },
     {
+      "src": "/admin",
+      "dest": "frontend/admin/admin.html"
+    },
+    {
       "src": "/admin/(.*)",
       "dest": "frontend/admin/$1"
     },
